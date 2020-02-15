@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Buscador = () => {
+const Buscador = ({productos}) => {
+
+    
     return (
         <>
             <label></label>
@@ -12,7 +14,7 @@ const Buscador = () => {
             </div>
 
             <ul className="list-group">
-                <li className="list-group-item disabled" aria-disabled="true">ITEM</li>
+    {productos.map(prod => <li key={prod.nombre} className="list-group-item disabled" aria-disabled="true">{prod.precio} - {prod.nombre} - {prod.descripcion} - {prod.categoria}</li> )}    
             </ul>
         </>)
 }

@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const [nombre, setNombre] = useState("");
     const [precio, setPrecio] = useState("");
     const [categoria, setCategoria] = useState(0);
-    const [productos, setProductos] = useState([]);
     const [descripcion,setDescripcion] = useState('');
 
-    console.log(productos);
 
     const handleSubmit = event => {
         event.preventDefault();
-        setProductos([...productos, { nombre, precio, categoria }])
+        const producto = { nombre, precio, categoria, descripcion }
+        props.onAddProd(producto)
     };
 
     const handleChangeNombre = event => setNombre(event.target.value);
