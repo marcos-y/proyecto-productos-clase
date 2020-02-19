@@ -11,6 +11,7 @@ const Formulario = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault();
+        event.stopPropagation();
         const producto = { nombre, precio, categoria, descripcion }
         props.onAddProd(producto)
     };

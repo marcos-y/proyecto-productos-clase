@@ -6,12 +6,15 @@ import './formularios.css';
 import Buscador from './buscadorylista';
 import './buscador.css';
 import'./appdiv.css';
+import BootstrapExample from './bootstrap example/BootstrapExample';
 
 function App() {
 
   const [productos, setProductos] = useState([])
 
   const handleAddProd = (producto) =>{
+    console.log(producto);
+    
     setProductos([...productos, producto])
     
   }
@@ -23,9 +26,12 @@ function App() {
       </div>
 
       <div className="buscador">
-        <Buscador productos={productos}></Buscador>
+        <Buscador productos={productos} />
       </div>
+
+      <BootstrapExample />
     </div>
+    
   );
 }
 
